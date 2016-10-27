@@ -1,0 +1,28 @@
+suitecrm:
+  image: nextindex/docker-suitecrm:7.7.6
+  ports:
+    - "4432:80"
+  links:
+    - "db"
+  environment:
+    DB_TYPE: mysql
+    DB_MANAGER: MysqlManager
+
+dbdata:
+  image: tianon/true
+  volumes:
+    - /var/lib/mysql
+
+db:
+  image: mysql:5.6
+  volumes_from:
+  - dbdata
+  labels:
+    io.rancher.sidekicks: dbdata
+  ports:
+    - 3306:3306
+  environment:
+    MYSQL_ROOT_PASSWORD: qnPBgFbTh63NJcPT9xofax6hjBD9JG
+    MYSQL_DATABASE: suitecrm
+    MYSQL_USER: suitecrm
+    MYSQL_PASSWORD: 9rt3tCxHH9WvuN8FXyiPxcmbnN7iTC
