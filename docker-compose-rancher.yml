@@ -3,22 +3,15 @@ suitecrm:
   ports:
     - "4432:80"
   links:
-    - "db"
+    - "suitecrmdata"
   environment:
     DB_TYPE: mysql
     DB_MANAGER: MysqlManager
 
-dbdata:
-  image: tianon/true
+suitecrmdata:
+  image: mysql:5.6
   volumes:
     - /var/lib/mysql
-
-db:
-  image: mysql:5.6
-  volumes_from:
-  - dbdata
-  labels:
-    io.rancher.sidekicks: dbdata
   ports:
     - 3306:3306
   environment:
