@@ -3,7 +3,7 @@ suitecrm:
   ports:
     - "4432:80"
   links:
-    - "suitecrmdata"
+    - suitecrmdata:db
   environment:
     DB_TYPE: mysql
     DB_MANAGER: MysqlManager
