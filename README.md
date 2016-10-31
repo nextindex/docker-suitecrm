@@ -5,8 +5,9 @@
 SuteCRM will run in it own container. And MySQL will run in it own container and there is a data-only container for MySQL.
 
 1. Install [Docker and Docker Compose](https://docs.docker.com/compose/install/)
-2. Run `docker-compose up` from the root of this project.
-3. Access `http://{docker_host}:8080` from your web browser to finish setting up SuiteCRM.
+2. In `docker-compose.yml` change your `MYSQL_ROOT_PASSWORD` and `MYSQL_PASSWORD`
+3. Run `docker-compose up` from the root of this project.
+4. Access `http://{docker_host}:8080` from your web browser to finish setting up SuiteCRM.
 
 ### Running with Docker Run
 
