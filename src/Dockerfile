@@ -13,6 +13,8 @@ RUN apt-get update && apt-get upgrade -y && \
     docker-php-ext-install mysql curl gd zip mbstring imap && \
     rm -rf /var/lib/apt/lists/*
 
+RUN apt-get clean
+
 WORKDIR /tmp
 
 RUN wget ${DOWNLOAD_URL}
@@ -27,6 +29,9 @@ ADD php.ini /usr/local/etc/php/php.ini
 ADD config_override.php.pyt /usr/local/src/config_override.php.pyt
 ADD envtemplate.py /usr/local/bin/envtemplate.py
 ADD init.sh /usr/local/bin/init.sh
+ADD config.php ${WWW_FOLDER}
+RUN chown -R ${WWW_USER}:${WWW_GROUP} ${WWW_FOLDER}/config.php
+RUN chmod 766 ${WWW_FOLDER}/config.php
 
 RUN chmod u+x /usr/local/bin/init.sh
 RUN chmod u+x /usr/local/bin/envtemplate.py

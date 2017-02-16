@@ -7,6 +7,9 @@ suitecrm:
   environment:
     DB_TYPE: mysql
     DB_MANAGER: MysqlManager
+  volumes:
+    -  /srv/docker/suitecrm/upload:/var/www/html/upload
+    -  /srv/docker/suitecrm/upload/config.php:/var/www/html/config.php
 
 suitecrmdata:
   image: mysql:5.6

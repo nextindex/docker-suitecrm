@@ -6,6 +6,9 @@ services:
       - "8080:80"
     depends_on:
       - mysql
+    volumes:
+      -  /srv/docker/suitecrm/upload:/var/www/html/upload
+      -  /srv/docker/suitecrm/upload/config.php:/var/www/html/config.php
     environment:
       DB_TYPE: mysql
       DB_MANAGER: MysqlManager
@@ -25,3 +28,5 @@ services:
 
 volumes:
   mysqldata:
+
+
