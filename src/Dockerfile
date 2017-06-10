@@ -1,8 +1,8 @@
 FROM php:5.6-apache
 
-ENV DOWNLOAD_URL https://github.com/salesagility/SuiteCRM/archive/v7.8.3.zip
-ENV DOWNLOAD_FILE v7.8.3.zip
-ENV EXTRACT_FOLDER SuiteCRM-7.8.3
+ENV DOWNLOAD_URL https://github.com/salesagility/SuiteCRM/archive/v7.8.4.zip
+ENV DOWNLOAD_FILE v7.8.4.zip
+ENV EXTRACT_FOLDER SuiteCRM-7.8.4
 ENV WWW_FOLDER /var/www/html
 ENV WWW_USER www-data
 ENV WWW_GROUP www-data
@@ -41,4 +41,3 @@ RUN crontab /root/crons.conf
 
 EXPOSE 80
 ENTRYPOINT ["/usr/local/bin/init.sh"]
-
