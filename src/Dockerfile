@@ -1,8 +1,8 @@
 FROM php:5.6-apache
 
-ENV DOWNLOAD_URL https://github.com/salesagility/SuiteCRM/archive/v7.9.0.zip
-ENV DOWNLOAD_FILE v7.9.0.zip
-ENV EXTRACT_FOLDER SuiteCRM-7.9.0
+ENV DOWNLOAD_URL https://github.com/salesagility/SuiteCRM/archive/v7.9.1.zip
+ENV DOWNLOAD_FILE v7.9.1.zip
+ENV EXTRACT_FOLDER SuiteCRM-7.9.1
 ENV WWW_FOLDER /var/www/html
 ENV WWW_USER www-data
 ENV WWW_GROUP www-data

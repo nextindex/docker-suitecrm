@@ -1,5 +1,5 @@
 suitecrm:
-  image: nextindex/docker-suitecrm:7.9.0
+  image: nextindex/docker-suitecrm:7.9.1
   ports:
     - "4432:80"
   links:
