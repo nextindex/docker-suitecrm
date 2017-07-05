@@ -1,3 +1,8 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/mashape/kong.svg?style=flat-square)](https://hub.docker.com/r/nextindex/docker-suitecrm/)
+
+
+# Docker SuiteCRM
+
 ## How to use this image
 
 ### Running with Docker Compose
