@@ -1,5 +1,5 @@
 suitecrm:
-  image: nextindex/docker-suitecrm:7.9.2
+  image: nextindex/docker-suitecrm:7.9.3
   ports:
     - "4432:80"
   links:
@@ -8,8 +8,8 @@ suitecrm:
     DB_TYPE: mysql
     DB_MANAGER: MysqlManager
   volumes:
-    -  /srv/docker/suitecrm/upload:/var/www/html/upload
-    -  /srv/docker/suitecrm/upload/config.php:/var/www/html/config.php
+    -  ./upload:/var/www/html/upload
+    -  ./config.php:/var/www/html/config.php
 
 suitecrmdata:
   image: mysql:5.6
