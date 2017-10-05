@@ -1,4 +1,4 @@
-FROM php:5.6-apache
+FROM php:7.1.10-apache
 
 ENV DOWNLOAD_URL https://github.com/salesagility/SuiteCRM/archive/7.9.6.zip
 ENV DOWNLOAD_FILE 7.9.6.zip
@@ -8,9 +8,9 @@ ENV WWW_USER www-data
 ENV WWW_GROUP www-data
 
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y libcurl4-gnutls-dev libpng-dev libssl-dev libc-client2007e-dev libkrb5-dev unzip cron re2c python tree wget && \
+    apt-get install -y libcurl4-gnutls-dev libpng-dev libmcrypt-dev libssl-dev libc-client2007e-dev libkrb5-dev unzip cron re2c python tree wget && \
     docker-php-ext-configure imap --with-imap-ssl --with-kerberos && \
-    docker-php-ext-install mysql curl gd zip mbstring imap && \
+    docker-php-ext-install pdo_mysql mysqli curl gd zip mbstring mcrypt imap && \
     rm -rf /var/lib/apt/lists/*
 
 RUN apt-get clean
@@ -25,11 +25,11 @@ RUN cp -R ${EXTRACT_FOLDER}/* ${WWW_FOLDER}/
 RUN chown -R ${WWW_USER}:${WWW_GROUP} ${WWW_FOLDER}/*
 RUN chown -R ${WWW_USER}:${WWW_GROUP} ${WWW_FOLDER}
 
-ADD php.ini /usr/local/etc/php/php.ini
-ADD config_override.php.pyt /usr/local/src/config_override.php.pyt
-ADD envtemplate.py /usr/local/bin/envtemplate.py
-ADD init.sh /usr/local/bin/init.sh
-ADD config.php ${WWW_FOLDER}
+COPY php.ini /usr/local/etc/php/php.ini
+COPY config_override.php.pyt /usr/local/src/config_override.php.pyt
+COPY envtemplate.py /usr/local/bin/envtemplate.py
+COPY init.sh /usr/local/bin/init.sh
+COPY config.php ${WWW_FOLDER}
 RUN chown -R ${WWW_USER}:${WWW_GROUP} ${WWW_FOLDER}/config.php
 RUN chmod 766 ${WWW_FOLDER}/config.php
 

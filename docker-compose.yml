@@ -14,7 +14,7 @@ services:
       DB_MANAGER: MysqlManager
 
   mysql:
-    image: mysql:5.6
+    image: mysql:5.7
     container_name: mysql
     volumes:
       - mysqldata:/var/lib/mysql
