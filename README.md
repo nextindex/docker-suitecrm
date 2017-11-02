@@ -1,5 +1,5 @@
-[![Docker Stars](https://img.shields.io/docker/stars/nextindex/docker-suitecrm.svg?style=flat-square)](https://hub.docker.com/r/nextindex/alpine-mailtrain/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/nextindex/docker-suitecrm.svg?style=flat-square)](https://hub.docker.com/r/nextindex/alpine-mailtrain/)
+[![Docker Stars](https://img.shields.io/docker/stars/nextindex/docker-suitecrm.svg?style=flat-square)](https://hub.docker.com/r/nextindex/docker-suitecrm/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/nextindex/docker-suitecrm.svg?style=flat-square)](https://hub.docker.com/r/nextindex/docker-suitecrm/)
 
 
 # Docker SuiteCRM
